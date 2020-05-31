@@ -1,0 +1,27 @@
+<h2 align="center">Редагування поста</h2>
+<div class="row row-centered ">
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+  <% if  @post.errors.any? %>
+    <% @post.errors.full_messages.each do |ms| %>
+      <div class="alert alert-danger"> <%=ms %></div>
+    <%end %>
+  <%end %>
+  <div class="form-group col-sm-offset-3 col-sm-6 ">
+    <div class="control-label ">
+      <%= f.label :Назва %>
+    </div>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Назва" %>
+
+    <div class="control-label ">
+      <%= f.label :'Текст Поста' %>
+    </div>
+    <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: "Текст поста"%>
+    <br>
+    <div class="form-group">
+      <div class="">
+        <%= f.submit class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+<%end %>
+</div>

@@ -1,0 +1,40 @@
+<h2 align="center"><%= @post.title %></h2>
+<div class="row row-centered ">
+  <div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center"><strong>Пост:</strong></h4>
+  <hr>
+  <%= simple_format(@post.body) %>
+    <% if logged_in? %>
+      <%=link_to "Редагувати", edit_post_path(@post), class: 'btn btn-warning' %>
+      <%=link_to "Видалити", post_path(@post), method: :delete,
+           data:{ confirm: "Впевнені, що хочите видалити пост?"}, class: 'btn btn-danger' %>
+     <%else %>
+      <hr>
+      <small>!!Для редагування, видалення і додавання коментарів потрібно ввійти!!</small>
+    <%end %>
+
+    <% if logged_in? %>
+      <hr>
+      <h2>Додавання коментаря</h2>
+      <%= form_for([@post, @post.comments.build]) do |f| %>
+          <p>
+             Коментар <br>
+              <%= f.text_area(:body, {class: 'form-control'}) %>
+          </p>
+          <p>
+              <%= f.submit("Добавити", {class: 'btn btn-success'}) %>
+          </p>
+        <%end %>
+    <%end %>
+<hr>
+<h2>Всі коментарі</h2>
+<% @post.comments.each do |comment| %>
+    <%if comment.user %>
+      <div class="alert alert-light list-group-item ">
+        <p><strong><%=comment.user.username %></strong></p>
+        <p><%=comment.body %></p>
+      </div>
+    <%end %>
+<%end %>
+  </div>
+</div>

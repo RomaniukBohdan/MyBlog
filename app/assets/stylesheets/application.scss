@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body{
+    height: 100%;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=0.800000011920929&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=') fixed no-repeat;
+    background-size: cover;
+
+}
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.article-actions {
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
+}
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.article-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.article-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+}
+.description {
+    margin-top: 0;
+}
+.listing {
+    list-style: none;
+    padding-left: 0;
+}
+.blur{
+    position:relative;
+    top:0;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(255,255,255,0.40);
+    z-index:1;
+    filter: blur(0px);
+
+}
+.blur:before{
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: rgba(255, 255, 255, 0.4);
+    filter: blur(10px);
+    z-index:1;
+}
+.text{
+    text-align: center;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+input{
+    background: 0;
+    width: 200px;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid rgba(255,255,255, 0.3);
+    margin: 20px 0;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(255,255,255, 0.8);
+}
+input[type="submit"]{
+    border: 0;
+    border-radius: 8px;
+    padding-bottom: 0;
+    height: 60px;
+    background: #df2359;
+    color: white;
+    cursor: pointer;
+    transition: all 600ms ease-in-out;
+}
+input[type="submit"]:hover{
+    background: #C0392B;
+}
+span a{
+    color: rgba(255,255,255, 0.8);
+}
+input[type="text"]{
+    margin-top: 0;
+}
+label{
+    color: rosybrown;
+}

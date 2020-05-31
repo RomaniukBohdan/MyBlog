@@ -1,0 +1,22 @@
+<h2 align="center">Вхід</h2>
+<div class="row row-centered ">
+  <%= form_for :session, url: login_path do |f| %>
+
+    <div class="form-group col-sm-offset-3 col-sm-6 ">
+      <div class="control-label ">
+        <%= f.label :Пошта %>
+      </div>
+      <%= f.email_field( :email, {class: 'form-control'}) %>
+      <div class="control-label ">
+        <%= f.label :'Пароль' %>
+      </div>
+      <%= f.password_field( :password, {class: 'form-control'}) %>
+      <br>
+      <div class="form-group">
+        <div class="">
+          <%= f.submit class: 'btn btn-success' %>
+        </div>
+      </div>
+    </div>
+  <%end %>
+</div>
